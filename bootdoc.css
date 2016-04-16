@@ -47,6 +47,10 @@
 	font-family: "Consolas", "Bitstream Vera Sans Mono", "Andale Mono", "Monaco", "DejaVu Sans Mono", "Lucida Console", "monospace";
 }
 
+.d_inline_code {
+    padding: 0px;
+}
+
 [class*='ddoc-icon-'] {
 	display: inline-block;
 	width: 16px;
