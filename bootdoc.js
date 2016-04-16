@@ -128,7 +128,7 @@ function populateModuleList(modTree) {
  * Build a relative path for the given module name.
  */
 function moduleNameToPath(modName) {
-	return modName.replace(/\./g, '/') + '.d';
+	return modName.replace(/[._]/g, '/') + '.d';
 }
 
 /**
