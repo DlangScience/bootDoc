@@ -144,6 +144,61 @@ DDOC = <!DOCTYPE html>
 	</body>
 </html>
 
+A = <a href="$1">$+</a>
+ADEF = <a name="$0"></a>
+AHTTP = <a href="http://$1">$+</a>
+AHTTPS = <a class="https" href="https://$1">$+</a>
+ALOCAL = <a href="#$1">$+</a>
+BIG = $(EMC big, $0)
+BR = <br>
+CAPTION = $(T caption, $0)
+CHECKMARK = &#10004;
+DD = $(T dd, $0)
+DIV = <div $1>$+</div>
+DIVC = $(TC div, $1, $+)
+DIVCID = $(DIV class="$1" id="$2", $3)
+DIVID = $(DIV id="$1", $+)
+DL = $(T dl, $0)
+DOUBLEQUOTE = $(LDQUO)$0$(RDQUO)
+DT = $(T dt, $0)
+EMC = $(TC em, $1, $+)
+ENUMERATE = $(OL $(ITEMS_HELPER $1, $+))
+GREATER = &gt;
+ITEMIZE = $(UL $(ITEMS_HELPER $1, $+))
+ITEMS_HELPER = $(LI $1)$(ITEMS_HELPER $+)
+H1 = $(T h1, $0)
+H2 = $(T h2, $0)
+H3 = $(T h3, $0)
+H4 = $(T h4, $0)
+H5 = $(T h5, $0)
+HR = <hr>
+I = $(T i, $0)
+LI = $(T li, $0)
+LESS = &lt;
+OL = $(T ol, $0)
+P = $(T p, $0)
+PRE = $(T pre, $0)
+SCRIPT = <script type="text/javascript">$0</script>
+SINGLEQUOTE = $(LSQUO)$0$(RSQUO)
+SMALL = $(T small, $0)
+SPAN = <span $1>$+</span>
+SPANC = $(TC span, $1, $+)
+SPANID = $(SPAN id="$1", $+)
+SUBSCRIPT = $(T sub, $0)
+SUPERSCRIPT = $(T sup, $0)
+TABLE = $(T table, $0)
+TABLEC = $(TC table, $1, $+)
+T=<$1>$+</$1>
+TC=<$1 class="$2">$(TAIL $+)</$1>
+TD = $(T td, $0)
+TD_HELPER = $(TD $1)$(TD_HELPER $+)
+TH_HELPER = $(TH $1)$(TH_HELPER $+)
+THEAD = $(TR $(TH_HELPER $1, $+))
+TR = $(T tr, $0)
+TT = $(EMC tt, $0)
+U = $(EMC u, $0)
+UL = $(T ul, $0)
+
 DDOC_DECL    = <hr><div class="row-fluid declaration"><h3>$0</h3></div>
 DDOC_DECL_DD = <div class="declaration-content">$0</div>
 DDOC_ANCHOR  =
@@ -182,6 +237,13 @@ DDOC_PARAMS = $(SECTION Parameters, <table class="table table-condensed table-bo
 DDOC_PARAM_ROW  = <tr>$0</tr>
 DDOC_PARAM_ID   = <td>$0</td>
 DDOC_PARAM_DESC = <td>$0</td>
+
+DDOC_ANCHOR  = $(ADEF $1)
+DDOC_PSYMBOL = $(U $0)
+DDOC_KEYWORD = $(B $0)
+DDOC_PARAM   = $(I $0)
+DDOC_CONSTRAINT=$(BR)$(SPAN class="constraint", if ($0))
+DDOC_TEMPLATE_PARAM_LIST=$(SPAN class="template_param_list" title="Template parameter list", $0)
 
 DDOC_KEYWORD = <span class="d_keyword">$0</span>
 D_KEYWORD = $(DDOC_KEYWORD $0)
