@@ -51,6 +51,20 @@
     padding: 0px;
 }
 
+.constraint {
+    opacity: .35;
+}
+.constraint:hover:before {
+    visibility: visible;
+}
+.constraint:before {
+    content: "Constraints: ";
+    visibility: hidden;
+}
+.constraint:hover {
+    opacity: 1;
+}
+
 [class*='ddoc-icon-'] {
 	display: inline-block;
 	width: 16px;
